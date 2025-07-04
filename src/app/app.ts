@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from './_components/navbar/navbar';
+import { NavbarComponent } from './_components/navbar/navbar.component';
+import { PrimaryButtonComponent } from './_components/primary-button/primary-button.component';
+import { SecundaryButtonComponent } from "./_components/secundary-button/secundary-button.component";
+import { ItemCertificadoComponent } from "./_components/item-certificado/item-certificado.component";
+import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
+import { CertificadosComponent } from './pages/certificados/certificados.component';
+import { CertificadoFormComponent } from "./pages/certificado-form/certificado-form.component";
+import { CertificadoComponent } from "./pages/certificado/certificado.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar],
+  imports: [RouterOutlet, NavbarComponent, PrimaryButtonComponent, SecundaryButtonComponent, ItemCertificadoComponent, BaseUiComponent, CertificadosComponent, CertificadoFormComponent, CertificadoComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css',
-  template: `@If (exibir){
-    <app-navbar></app-navbar>
-  }`,
-  standalone: true
+  styleUrl: './app.css'
 })
 export class App {
   protected title = 'my-app';
-  exibir: boolean = true
 }

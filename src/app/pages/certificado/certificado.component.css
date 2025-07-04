@@ -1,0 +1,92 @@
+.menu-certificado{
+    justify-content: space-between;
+    width: 800px;
+}
+
+.certificado{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin-top: 32px;
+    padding: 40px;
+    background-image: url('../../../../public/certificate/Certificate_BG.svg');
+}
+
+.conteudo-certificado{
+    width: 720px;
+    height: 470px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+}
+
+.icone-medalha{
+    position: absolute;
+    width: 88px;
+    top: 12px;
+    left: 12px;
+}
+
+.texto-certificado{
+    margin: 57px 40px auto 40px;
+}
+
+.certificado-header{
+    display: flex;
+    gap: 8px;
+}
+
+.certificado-title{
+    font-size: 24px;
+    color: #1A2856;
+    letter-spacing: 10%;
+    line-height: 160%;
+    font-weight: 700;
+}
+
+.certificado-subtitle{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 160%;
+    margin: 0;
+}
+
+.nome-aluno{
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 80px;
+    color: #3b5ac2;
+}
+
+.lista-atividades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.lista-atividades-title{
+    font-size: 12px;
+    line-height: 160%;
+    font-weight: 500;
+}
+
+.lista-atividades-subtitle{
+    text-align: center;
+}
+
+.emitido{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 160%;
+}
+
+.icone-assinatura{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 40px;
+    bottom: 24px;
+    width: 64px;
+    height: 64px;
+}

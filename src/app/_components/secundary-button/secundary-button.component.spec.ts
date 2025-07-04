@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Navbar } from './navbar';
+import { SecundaryButtonComponent } from './secundary-button.component';
 
-describe('Navbar', () => {
-  let component: Navbar;
-  let fixture: ComponentFixture<Navbar>;
+describe('SecundaryButtonComponent', () => {
+  let component: SecundaryButtonComponent;
+  let fixture: ComponentFixture<SecundaryButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Navbar]
+      imports: [SecundaryButtonComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Navbar);
+    fixture = TestBed.createComponent(SecundaryButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
