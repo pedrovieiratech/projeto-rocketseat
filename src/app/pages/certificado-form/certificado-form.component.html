@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center">
+<form #form="ngForm" novalidate class="d-flex flex-column align-items-center">
     <div class="text-center custom-titles">
         <h1 class="fw-bold custom-title mb-2">Geraçao de certificados</h1>
         <p class="custom-subtitle mb- 4">Visualize todos certificados gerados</p>
@@ -10,43 +10,41 @@
         <div class="d-flex align-items-end mb-3">
             <div class="w-100 custom-input-group">
                 <label for="form-label">Nome</label>
-                <input type="text" class="form-control custom-input" placeholder="Digite o nome completo do aluno">
+                <input [(ngModel)]="certificado.nome" #nomeRef="ngModel" name="nome" required type="text" class="form-control custom-input" placeholder="Digite o nome completo do aluno">
+                @if(nomeRef.errors?.['required'] && nomeRef.touched && nomeRef.invalid){
+                    <div class="error-message d-flex align-items-center">
+                        <i class="ph ph-warning-octagon"></i>
+                        <p class="text-erro m-0">O campo não pode estar vazio</p>
+                    </div>
+                }
             </div>
         </div>
 
         <div class="d-flex align-items-end mb-3">
             <div class="me-2 w-100 custom-input-group">
                 <label for="form-label">Atividade</label>
-                <input type="text" class="form-control custom-input" placeholder="Digite o título da atividade">
-                <div class="error-message d-flex align-items-center">
-                    <i class="ph ph-warning-octagon"></i>
-                    <p class="text-erro m-0">Erro</p>
-                </div>
+                <input [(ngModel)]="atividade" #atividadeRef="ngModel" name="atividade" required type="text" class="form-control custom-input" placeholder="Digite o título da atividade">
+                
             </div>
-            <app-secundary-button></app-secundary-button>
+            <app-secundary-button (click)="addAtividade()" [disabled]="atividade.length == 0" textoBotao="Adicionar" icone="ph ph-plus"></app-secundary-button>
         </div>
 
         <div class="atividade-group">
             <label for="form-label">Lista de atividades</label>
-            <div class="item-list w-100">
-                <div class="item">
-                    <span>atividade</span>
-                    <div class="remove-btn"><i class="ph ph-x"></i></div>
-                </div>
-                <hr class="w-100">
-                <div class="item">
-                    <span>atividade</span>
-                    <div class="remove-btn"><i class="ph ph-x"></i></div>
-                </div>
-                <hr class="w-100">
-                <div class="item">
-                    <span>atividade</span>
-                    <div class="remove-btn"><i class="ph ph-x"></i></div>
-                </div>
+            <div class="item-list">
+                @for (atividade of certificado.atividades; track $index) {
+                    <div class="item">
+                        <span>{{atividade}}</span>
+                        <div (click)="removerAtividade($index)" class="remove-btn"><i class="ph ph-x"></i></div>
+                    </div>
+                    @if($index + 1 !== certificado.atividades.length){
+                        <hr>
+                    }
+                }
             </div>
-            <app-primary-button></app-primary-button>
+            <app-primary-button (click)="submit()" [disabled]="!formValid()" textoBotao="Gerar Certificado"></app-primary-button>
         </div>
         
 
     </div>
-</div>
+</form>
