@@ -42,6 +42,10 @@ div i:hover{
     margin: 12px 0;
 }
 
+.custom-input{
+    
+}
+
 .custom-input:focus{
     border: 1px solid #3b5ac2 ;
     box-shadow: none;
