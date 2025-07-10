@@ -7,7 +7,8 @@
         <app-secundary-button [textoBotao]="'Dowload'"></app-secundary-button>
     </div>
 
-    <div class="certificado d-flex flex-column justify-content-center align-items-center">
+    @if(certificado){
+        <div class="certificado d-flex flex-column justify-content-center align-items-center">
         <div class="conteudo-certificado">
             <img class="icone-assinatura" src="certificate/Certificate_Signature.svg" alt="">
             <div class="texto-certificado d-flex flex-column align-items-center">
@@ -15,16 +16,18 @@
                     <h1 class="certificado-title">CERTIFICADO DE CONCLUSÃO</h1>
                     <p class="certificado-subtitle">Este certificado comprova que</p>
                 </div>
-                <p class="nome-aluno">Ana Silva Lopes</p>
+                <p class="nome-aluno">{{certificado.nome}}</p>
                 <div class="lista-atividades">
                     <p class="lista-atividades-title">Concluiu com sucesso as seguintes atividades:</p>
                     <p class="lista-atividades-subtitle">Introdução ao Angular, Configuração com Angular CLI, Criação de componentes reutilizáveis, Manipulação de dados, Implementação de data binding, Criação de rotas com Angular Router, Consumo de APIs REST</p>
                 </div>
                 <div class="footer d-flex flex-column align-items-center w-100">
-                    <p class="emitido m-0">{{certificado}}</p>
+                    <p class="emitido m-0">{{certificado.data}}</p>
                 </div>
             </div>
         </div>
         <img class="icone-medalha" src="certificate/Certificate_Ribbon.svg">
-    </div>
+        </div>
+    }
+    
 </div>
