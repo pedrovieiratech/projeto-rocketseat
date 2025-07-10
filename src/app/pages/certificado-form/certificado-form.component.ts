@@ -12,7 +12,7 @@ import { CertificadoService } from '../../services/certificado.service';
   templateUrl: './certificado-form.component.html',
   styleUrl: './certificado-form.component.css'
 })
-export class CertificadoFormComponent{
+export class CertificadoFormComponent {
   atividade: string = ''
   certificado: Certificado = {
     nome: '',
@@ -43,7 +43,7 @@ export class CertificadoFormComponent{
     }
   }
 
-  formatarData(): string{
+  formatarData(){
     const dataAtual = new Date()
 
     const dia = dataAtual.getDate()
