@@ -14,4 +14,5 @@ export class CertificadoService {
     this.certificados.push(certificado)
     console.log(this.certificados)
   }
+  //alteracao
 }
