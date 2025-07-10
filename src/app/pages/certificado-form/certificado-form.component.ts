@@ -12,16 +12,12 @@ import { CertificadoService } from '../../services/certificado.service';
   templateUrl: './certificado-form.component.html',
   styleUrl: './certificado-form.component.css'
 })
-export class CertificadoFormComponent implements OnInit{
+export class CertificadoFormComponent{
   atividade: string = ''
   certificado: Certificado = {
     nome: '',
     atividades: [],
     data: ''
-  }
-
-  ngOnInit(): void {
-      this.submit()
   }
 
   constructor(private certificadoService: CertificadoService){}
