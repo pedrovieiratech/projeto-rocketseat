@@ -26,7 +26,7 @@
                 <input [(ngModel)]="atividade" #atividadeRef="ngModel" name="atividade" required type="text" class="form-control custom-input" placeholder="Digite o título da atividade">
                 
             </div>
-            <app-secundary-button (click)="addAtividade()" [disabled]="atividade.length == 0" textoBotao="Adicionar" icone="ph ph-plus"></app-secundary-button>
+            <app-secundary-button (click)="addAtividade()" [disabled]="atividade.length === 0" textoBotao="Adicionar" icone="ph ph-plus"></app-secundary-button>
         </div>
 
         <div class="atividade-group">
