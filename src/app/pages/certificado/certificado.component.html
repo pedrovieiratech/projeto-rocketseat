@@ -4,7 +4,7 @@
             <i (click)="voltar()" class="ph ph-arrow-left"></i>
             <p class="txt-voltar m-0 ms-1">Voltar</p>
         </div>
-        <app-secundary-button></app-secundary-button>
+        <app-secundary-button [textoBotao]="'Dowload'"></app-secundary-button>
     </div>
 
     <div class="certificado d-flex flex-column justify-content-center align-items-center">
@@ -21,7 +21,7 @@
                     <p class="lista-atividades-subtitle">Introdução ao Angular, Configuração com Angular CLI, Criação de componentes reutilizáveis, Manipulação de dados, Implementação de data binding, Criação de rotas com Angular Router, Consumo de APIs REST</p>
                 </div>
                 <div class="footer d-flex flex-column align-items-center w-100">
-                    <p class="emitido m-0">Emitido em 25/04/2025</p>
+                    <p class="emitido m-0">{{certificado}}</p>
                 </div>
             </div>
         </div>

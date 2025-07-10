@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
 import { FormsModule } from '@angular/forms';
