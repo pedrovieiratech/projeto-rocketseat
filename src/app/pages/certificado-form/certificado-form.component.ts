@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
 import { FormsModule } from '@angular/forms';
@@ -11,11 +11,16 @@ import { Certificado } from '../../interfaces/CertificadoInterface';
   templateUrl: './certificado-form.component.html',
   styleUrl: './certificado-form.component.css'
 })
-export class CertificadoFormComponent {
+export class CertificadoFormComponent implements OnInit{
   atividade: string = ''
   certificado: Certificado = {
     nome: '',
-    atividades: []
+    atividades: [],
+    data: ''
+  }
+
+  ngOnInit(): void {
+      this.submit()
   }
 
   formValid(){
@@ -35,5 +40,16 @@ export class CertificadoFormComponent {
     if(this.formValid()){
       console.log(this.certificado)
     }
+  }
+
+  formatarData(){
+    const dataAtual = new Date()
+    const ano = dataAtual.getFullYear()
+    const mes = dataAtual.getMonth()+1
+    const dia = dataAtual.getDate()
+
+    const dataFormatada = `${dia}/${mes}/${ano}`
+
+    this.certificado.data = dataFormatada
   }
 }
