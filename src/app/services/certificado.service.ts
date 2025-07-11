@@ -14,6 +14,6 @@ export class CertificadoService implements OnInit{
 
   adicionarCertificado(certificado: Certificado){
     this.certificados.push({...certificado})
-    localStorage.setItem('certificados',JSON.stringify(this.certificados))
+    //localStorage.setItem('certificados',JSON.stringify(this.certificados))
   }
 }

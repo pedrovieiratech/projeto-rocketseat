@@ -4,11 +4,11 @@
             <i (click)="voltar()" class="ph ph-arrow-left"></i>
             <p class="txt-voltar m-0 ms-1">Voltar</p>
         </div>
-        <app-secundary-button [textoBotao]="'Dowload'"></app-secundary-button>
+        <app-secundary-button (click)="instalarCertificado()" [textoBotao]="'Dowload'"></app-secundary-button>
     </div>
 
     @if(certificado){
-        <div class="certificado d-flex flex-column justify-content-center align-items-center">
+        <div #certificadoRef class="certificado d-flex flex-column justify-content-center align-items-center">
         <div class="conteudo-certificado">
             <img class="icone-assinatura" src="certificate/Certificate_Signature.svg" alt="">
             <div class="texto-certificado d-flex flex-column align-items-center">
